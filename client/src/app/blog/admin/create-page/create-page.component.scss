@@ -1,0 +1,126 @@
+:host{
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  border-radius: 84px 84px 0 0;
+  display: flex;
+  overflow: hidden;
+
+  .card {
+    width: 55%;
+    padding: 0 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0;
+
+    form {
+      width: 75%;
+
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+
+        .form-control {
+          height: 40px;
+          font-size: 20px;
+          background-color: #F3F5FA;
+          border-radius: 15px;
+          border: 0;
+          outline: none;
+          padding: 0 12px;
+        }
+
+        label {
+          margin-bottom: 8px;
+          font-size: 24px;
+          line-height: 24px;
+          font-weight: 300;
+          color: #17152E;
+        }
+
+
+      }
+
+      button{
+        height: 40px;
+        width: 100%;
+        border: 0;
+        border-radius: 15px;
+        font-size: 24px;
+        color: #fff;
+        background-color: #4B72A6;
+        cursor: pointer;
+        outline: none;
+      }
+
+      button:hover{
+        background-color: rgba(75, 114, 166, 0.904);
+      }
+    }
+  }
+
+  .img {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F5FA;
+
+    svg {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px){
+  main{
+    border-radius: 45px 45px 0 0;
+
+      .card{
+        border-radius: 45px 0 0 0;
+        width: 52%;
+        form{
+          padding-top: 30px;
+          width: 100%;
+        }
+      }
+
+      .img{
+        border-radius: 0 45px 0 0 ;
+        width: 48%;
+        svg{
+          width: 100%;
+        }
+      }
+  }
+}
+
+@media only screen and (max-width: 650px){
+  main{
+    .card{
+      border: 45px 45px 0 0;
+      width: 100%;
+    }
+
+    .img{
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px){
+  main{
+    .card{
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+}

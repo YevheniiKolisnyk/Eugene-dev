@@ -1,0 +1,23 @@
+<header>
+  <div class="logoBlock">
+    <a [routerLink]="['/']" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6.36364" cy="6.36364" r="6.36364" fill="white"/>
+        <circle cx="21.6363" cy="6.36364" r="6.36364" fill="white"/>
+        <circle cx="21.6363" cy="21.6366" r="6.36364" fill="white"/>
+        <circle cx="6.36364" cy="21.6366" r="6.36364" fill="white"/>
+        </svg>
+
+      <p>Blog</p>
+    </a>
+  </div>
+  <div class="buttonBlock">
+    <button (click)="redirect()">Admin</button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>

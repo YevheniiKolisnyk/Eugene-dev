@@ -1,0 +1,17 @@
+:host{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.posts{
+  width: 100%;
+
+
+}
+
+.spinner{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

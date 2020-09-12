@@ -1,0 +1,65 @@
+<main>
+  <div class="left-block">
+    <div class="title-block">
+      <p class="title-tag open">&#60;h1&#62;</p>
+      <p class="title-text">Contact</p>
+      <p class="title-tag close">&#60;/h1&#62;</p>
+    </div>
+
+    <div class="paragraph-block">
+      <p class="paragraph-tag open">&#60;p&#62;</p>
+      <p class="paragraph-text">
+        If you have any offers or questions feel free to contact me.
+      </p>
+      <p class="paragraph-tag close">&#60;/p&#62;</p>
+    </div>
+  </div>
+
+  <div class="right-block">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" method="POST">
+      <div class="userData">
+        <input
+          [ngStyle]="{'outline': form.get('name').invalid && form.get('name').touched ? '2px solid #912D2D' : 'none'}"
+          formControlName="name"
+          placeholder="Name"
+          type="text"
+        >
+        <input
+          [ngStyle]="{'outline': form.get('email').invalid && form.get('email').touched ? '2px solid #912D2D' : 'none'}"
+          formControlName="email"
+          placeholder="Email"
+          type="text"
+        >
+      </div>
+      <input
+        [ngStyle]="{'outline': form.get('subject').invalid && form.get('subject').touched ? '2px solid #912D2D' : 'none'}"
+        class="subject"
+        formControlName="subject"
+        placeholder="Subject"
+        type="text">
+
+      <textarea
+        [ngStyle]="{'outline': form.get('message').invalid && form.get('message').touched ? '2px solid #912D2D' : 'none'}"
+        class="message"
+        formControlName="message"
+        placeholder="Message"
+      ></textarea>
+
+      <div class="bottom">
+        <div class="links">
+          <a href="mailto: yevhenii.kolisnyk@gmail.com" target="_blank">
+            <span class="iconify" data-icon="feather:mail" data-inline="false" style="color: #73EEFF;"></span>
+          </a>
+          <a href="https://github.com/YevheniiKolisnyk" target="_blank">
+            <span class="iconify" data-icon="codicon:github-alt" data-inline="false" style="color: #73EEFF;"></span>
+          </a>
+          <a href="https://www.linkedin.com/in/yevhenii-kolisnyk-b97ba71a2/" target="_blank">
+            <span class="iconify" data-icon="simple-line-icons:social-linkedin" data-inline="false"
+                  style="color: #73EEFF;"></span>
+          </a>
+        </div>
+        <button [disabled]="form.invalid" class="btn" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</main>

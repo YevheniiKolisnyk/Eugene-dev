@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="userInfo">
+    <div class="line"></div>
+    <div class="info">
+      <p class="author">{{post.author}}</p>
+      <div class="date">{{post.date | date:'shortDate'}}</div>
+    </div>
+  </div>
+
+  <p class="title">{{post.title}}</p>
+
+  <button class="defaultButton" [routerLink]="['post/', post.id]">Open</button>
+  <button class="adaptiveButton" [routerLink]="['post/', post.id]"><mat-icon>arrow_right_alt</mat-icon></button>
+</div>

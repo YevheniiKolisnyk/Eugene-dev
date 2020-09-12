@@ -1,0 +1,13 @@
+<div class="wrapperr">
+  <div class="head">
+    <h1>Keep learning!</h1>
+  </div>
+
+  <main>
+    <div class="cards" *ngFor="let n of translateService.noAnswer" >
+      <p>{{n.word}}</p>
+      <hr>
+      <p>{{n.translate}}</p>
+    </div>
+  </main>
+</div>

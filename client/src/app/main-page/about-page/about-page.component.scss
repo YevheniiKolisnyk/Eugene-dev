@@ -1,0 +1,44 @@
+@import "../mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  @include main-mixin(450px);
+
+  .img-wrapper {
+    width: 400px;
+    position: relative;
+
+    &:before {
+      z-index: -100;
+      position: absolute;
+      width: calc(100% - 15px);
+      height: 10px;
+      content: '';
+      bottom: 0;
+      right: 0;
+      transform: translateY(5px);
+      background-color: #73EEFF;
+    }
+
+    &:after {
+      z-index: -100;
+      position: absolute;
+      width: 10px;
+      height: calc(100% - 15px);
+      content: '';
+      bottom: 0;
+      right: 0;
+      transform: translate(10px, 5px);
+      background-color: #73EEFF;
+    }
+
+    .userpic {
+      width: 100%;
+    }
+  }
+}

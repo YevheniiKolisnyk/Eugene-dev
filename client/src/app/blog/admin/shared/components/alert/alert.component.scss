@@ -1,0 +1,13 @@
+.alert-wrapper{
+  z-index: 20;
+  position: fixed;
+  top: 50px;
+  right: 30px;
+  max-width: 200px;
+
+    .alert{
+      p{
+        margin: 0;
+      }
+    }
+}

@@ -1,0 +1,29 @@
+<main>
+  <div class="left-block">
+    <div class="title-block">
+      <p class="title-tag open">&#60;h1&#62;</p>
+      <p class="title-text">Projects</p>
+      <p class="title-tag close">&#60;/h1&#62;</p>
+    </div>
+
+    <div class="paragraph-block">
+      <p class="paragraph-tag open">&#60;p&#62;</p>
+      <p class="paragraph-text">
+        Here you can see some of my projects I’ve worked in.
+      </p>
+      <p class="paragraph-tag close">&#60;/p&#62;</p>
+    </div>
+  </div>
+
+  <div class="right-block">
+    <div class="carousel-container">
+      <div (click)="prevSlide()" class="prev btn"><span class="material-icons">keyboard_arrow_left</span></div>
+      <div #carousel class="carousel">
+        <a *ngFor="let slide of slides" [href]="slide.url" class="slide" target="_blank">
+          <img [src]="slide.link" alt="">
+        </a>
+      </div>
+      <div (click)="nextSlide()" class="next btn"><span class="material-icons">keyboard_arrow_right</span></div>
+    </div>
+  </div>
+</main>

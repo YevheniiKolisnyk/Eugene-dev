@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #4D515C;
+  position: relative;
+
+  .leftSVG {
+    position: absolute;
+    width: 500px;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .rightSVG {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+
+    h1 {
+      font-size: 50px;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      font-size: 30px;
+      line-height: 30px;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+
+   .buttons{
+     width: 70%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+    button {
+      margin-left: 25px;
+      width: 150px;
+      height: 50px;
+      background-color: #FAAE42;
+      color: #ffffff;
+      font-size: 30px;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 70px;
+      border: 0;
+      cursor: pointer;
+      outline: none;
+    }
+
+    button:hover {
+      background-color: rgba(250, 173, 66, 0.856);
+    }
+   }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    .leftSVG {
+      width: 350px;
+    }
+
+    .rightSVG {
+      width: 350px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    .leftSVG {
+      top: 25%;
+    }
+
+    .container {
+      top: 61%;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  main {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .leftSVG {
+      top: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .rightSVG {
+      display: none;
+    }
+
+    .container {
+      padding-top: 50px;
+      position: initial;
+
+        p{
+          width: 90%;
+        }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    .container {
+      padding-top: 120px;
+      h1 {
+        font-size: 30px;
+        line-height: 30px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  main {
+    .leftSVG {
+      width: 250px;
+    }
+
+    .container {
+      padding-top: 150px;
+
+        button{
+          font-size: 20px;
+        }
+    }
+  }
+}

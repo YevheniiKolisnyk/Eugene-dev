@@ -1,0 +1,111 @@
+@import "../mixins";
+
+@mixin input($width, $height) {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 15px;
+  height: $height;
+  width: $width;
+  font-size: 15px;
+  background-color: #373737;
+  color: #989898;
+  border: none;
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  @include main-mixin(300px);
+
+  .right-block {
+    //border: 1px solid #912d2d;
+
+    form {
+      width: 445px;
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+
+      .userData {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        input {
+          @include input(215px, 50px);
+        }
+      }
+
+      .subject {
+        @include input(100%, 50px);
+        margin-bottom: 15px;
+      }
+
+      .message {
+        @include input(100%, 170px);
+        resize: none;
+        margin-bottom: 15px;
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .links {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            margin: 0;
+            font-size: 30px;
+          }
+        }
+
+        .btn {
+          width: 110px;
+          height: 40px;
+          outline: none;
+          font-size: 18px;
+          font-family: 'Ubuntu', sans-serif;
+          border: 1px solid #73EEFF;
+          background: transparent;
+          color: #73EEFF;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+
+          &:disabled {
+            color: #73eeff73;
+            border-color: #73eeff73;
+            cursor: default;
+          }
+
+          &:before {
+            position: absolute;
+            content: "";
+            background-color: #96e6f8;
+            opacity: .3;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transition: all 0.6s ease;
+            width: 100%;
+            height: 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+
+          &:hover:enabled:before {
+            height: 380%;
+          }
+        }
+      }
+    }
+  }
+}

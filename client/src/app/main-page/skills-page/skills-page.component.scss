@@ -1,0 +1,63 @@
+@import "../mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  @include main-mixin(300px);
+
+  .right-block {
+    width: 700px;
+
+    .skills-container {
+      width: 100%;
+      position: relative;
+      background-color: #333333;
+      padding: 30px 20px;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        z-index: -100;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        bottom: 0;
+        right: 0;
+        transform: translate(20px, 20px);
+        background-color: #73EEFF;
+      }
+
+      .block {
+        width: 33%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .skill {
+          height: 30px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .iconify {
+            font-size: 25px;
+            margin-right: 15px;
+          }
+
+          p {
+            font-size: 16px;
+            font-family: 'Ubuntu', sans-serif;
+            color: #73EEFF;
+            margin: 0;
+          }
+        }
+      }
+
+    }
+  }
+}

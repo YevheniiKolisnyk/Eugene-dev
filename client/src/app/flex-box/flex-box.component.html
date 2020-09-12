@@ -1,0 +1,85 @@
+<div class="header">
+  <a
+    matTooltip="Go home page"
+    matTooltipPosition="right"
+    [routerLink]="['/']"
+    class="logo"
+  >
+    Flexbox sheet
+  </a>
+</div>
+
+<main>
+  <div class="select__flex__block">
+    <h4 class="select__title">Choose flex property</h4>
+    <mat-form-field  class="select" appearance="fill">
+      <mat-label>Flex property</mat-label>
+      <mat-select (selectionChange)="setDefaultStyle()" [(ngModel)]="selectedItem">
+        <mat-option *ngFor="let prop of flexProperties" [value]="prop.value">
+          {{prop.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="controls">
+    <div (click)="onClick($event)" class="controls__button" *ngFor="let button of flexParams[selectedItem]">
+      {{button}}
+    </div>
+
+  </div>
+
+  <div class="field" >
+    <div class="field__example" [ngStyle]="parentFlexStyle">
+      <div
+        class="field__example__child"
+        [ngStyle]="childFlexStyle"
+      >
+        1
+      </div>
+      <div
+        class="field__example__child"
+        [ngStyle]="childFlexStyle"
+      >
+        2
+      </div>
+      <div
+        class="field__example__child"
+        [ngStyle]="selectedItem === 'order'
+                   || selectedItem === 'alignSelf'
+                   || selectedItem === 'flexGrow'
+                   || selectedItem === 'flexShrink'
+                   || selectedItem === 'flexBasis'
+                        ? selectedChildFlexStyle : childFlexStyle"
+      >
+        3
+      </div>
+      <div
+        class="field__example__child"
+        [ngStyle]="childFlexStyle"
+      >
+        4
+      </div>
+    </div>
+
+    <div class="field__code">
+      <span
+        class="material-icons icon"
+        ngxClipboard [cbContent]="textChildToClipBoard ? textChildToClipBoard : textToClipBoard"
+        (click)="openSnackBar()"
+      >
+        file_copy
+      </span>
+      <div class="code">
+        <p>.parent &#123;</p>
+        <p style="margin-left: .5em;">display: flex;</p>
+        <p style="margin-left: .5em;">{{textToClipBoard}}</p>
+        <p>&#125;</p>
+        <p *ngIf="textChildToClipBoard">.child &#123;</p>
+        <p *ngIf="textChildToClipBoard" style="margin-left: .5em;">{{textChildToClipBoard}}</p>
+        <p *ngIf="textChildToClipBoard">&#125;</p>
+      </div>
+    </div>
+  </div>
+
+</main>

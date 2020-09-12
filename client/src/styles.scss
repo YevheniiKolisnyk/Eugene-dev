@@ -1,0 +1,64 @@
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.myapp-no-padding-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.mat-dialog-container {
+  border-radius: 0;
+  padding: 0 !important;
+  margin: 0;
+}
+
+quill-editor {
+  .ql-container {
+    .ql-editor {
+      height: 100px;
+    }
+  }
+}
+
+mat-form-field {
+  .mat-form-field-wrapper {
+    .mat-form-field-flex {
+      background-color: #ffffff;
+      &:hover{
+        background-color: #fff;
+      }
+    }
+
+    .mat-form-field-underline {
+      &::before {
+        background-color: rgba(68, 211, 230);
+      }
+    }
+  }
+}
+
+mat-select {
+  .mat-select-trigger{
+    .mat-select-arrow-wrapper{
+      .mat-select-arrow{
+        color: rgba(68, 211, 230);
+        &:active{
+          color: red;
+        }
+      }
+    }
+  }
+}

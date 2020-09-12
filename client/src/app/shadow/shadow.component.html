@@ -1,0 +1,214 @@
+<div class="containerr">
+  <div class="wrapperr">
+    <header>
+      <a
+        routerLink="/">
+        <h1
+        matTooltip="Go to home page"
+        matTooltipPosition="after">
+          Shadow generator
+          </h1>
+      </a>
+      <hr>
+    </header>
+
+
+    <main>
+      <form [formGroup]="form" >
+        <!-- Toggle -->
+        <div class="formControl">
+          <div class="toggleButton">
+            <p>Inset</p>
+            <div class="switch">
+              <input
+                id="switch-1"
+                type="checkbox"
+                class="switch-input"
+                formControlName="checkboxToggle"
+                [(ngModel)]="values.checkbox"
+                (change)="onChangeToggle($event)"
+                (change)="onChange()"
+                >
+              <label
+                for="switch-1"
+                class="switch-label">Switch</label>
+            </div>
+            <p>Outline</p>
+          </div>
+        </div>
+        <hr>
+        <!-- Horizontal offset -->
+        <div class="formControl">
+          <label for="h-offset">Horizontal offset</label><br>
+          <div class="sliderContainer">
+            <input
+            id="h-offset"
+            class="slider"
+            type="range"
+            min="-100"
+            max="100"
+            value="0"
+            formControlName="horizontalOffset"
+            [(ngModel)]="values.horizontal"
+            (mousemove)="onChange()">
+
+                <input
+                  type="text"
+                  class="inputFor"
+                  formControlName="inputForHorizontal"
+                  [(ngModel)]="values.horizontal"
+                  (input)="onChange()">
+          </div>
+        </div>
+          <!-- Vertical offset -->
+        <div class="formControl">
+          <label for="v-offset">Vertical offset</label><br>
+          <div class="sliderContainer">
+            <input
+            id="v-offset"
+            type="range"
+            class="slider"
+            min="-100"
+            max="100"
+            value="0"
+            formControlName="verticalOffset"
+            [(ngModel)]="values.vertical"
+            (mousemove)="onChange()">
+
+              <input
+                type="text"
+                class="inputFor"
+                formControlName="inputForVertical"
+                [(ngModel)]="values.vertical"
+                (input)="onChange()">
+          </div>
+        </div>
+
+          <hr>
+        <!-- Blur radius -->
+        <div class="formControl">
+          <label for="blur">Blur radius</label><br>
+          <div class="sliderContainer">
+            <input
+            id="blur"
+            class="slider"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            formControlName="blurRadius"
+            [(ngModel)]="values.blur"
+            (mousemove)="onChange()">
+
+              <input
+                type="text"
+                class="inputFor"
+                formControlName="inputForBlur"
+                [(ngModel)]="values.blur"
+                (input)="onChange()">
+          </div>
+        </div>
+        <!-- Spread radius -->
+        <div class="formControl">
+          <label for="spread">Spread radius</label><br>
+          <div class="sliderContainer">
+            <input
+          id="spread"
+          class="slider"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          formControlName="spreadRadius"
+          [(ngModel)]="values.spread"
+          (mousemove)="onChange()">
+
+            <input
+              type="text"
+              class="inputFor"
+              formControlName="inputForSpread"
+              [(ngModel)]="values.spread"
+              (input)="onChange()">
+          </div>
+        </div>
+
+        <hr>
+        <!-- Shadow color -->
+        <div class="formControl">
+          <label for="shadowColor">Shadow color</label><br>
+          <input
+            class="colorInput"
+            type="color"
+            color-fromat="rgba"
+            formControlName="shadowColor"
+            [(ngModel)]="values.shadowColor"
+            (change)="onChange()">
+        </div>
+        <!-- Opacity -->
+        <div class="formControl">
+          <label for="opacity">Opacity</label><br>
+          <div class="sliderContainer">
+            <input
+            id="opacity"
+            class="slider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+            formControlName="opacity"
+            [(ngModel)]="values.opacity"
+            (mousemove)="onChange()">
+
+              <input
+              type="text"
+              class="inputFor"
+              formControlName="inputForOpacity"
+              [(ngModel)]="values.opacity"
+              (input)="onChange()">
+
+          </div>
+        </div>
+
+      </form>
+
+      <div class="example">
+        <div class="example-container">
+          <div
+          *ngIf="showCodeButton"
+          class="code"
+          [@fadeIn]="fadeIn"
+          [@fadeOut]='fadeOut'
+          [ngStyle]="blockStyles">
+          <mat-icon class="icon" (click)="copy()">file_copy</mat-icon>
+          <p>-webkit-box-shadow: {{values.marked}}
+                                  {{values.horizontal}}px
+                                  {{values.vertical}}px
+                                  {{values.blur}}px
+                                  {{values.spread}}px
+                                  {{rgbaColor}};</p>
+
+            <p>-moz-box-shadow: {{values.marked}}
+                                {{values.horizontal}}px
+                                {{values.vertical}}px
+                                {{values.blur}}px
+                                {{values.spread}}px
+                                {{rgbaColor}};</p>
+
+              <p>box-shadow: {{values.marked}}
+                             {{values.horizontal}}px
+                             {{values.vertical}}px
+                             {{values.blur}}px
+                             {{values.spread}}px
+                             {{rgbaColor}};</p>
+        </div>
+        </div>
+        <div class="exampleBlock">
+          <div class="shadowBlock" [ngStyle]="style">
+            <button class="showCode" (click)="showCodeButton = !showCodeButton">Show code</button>
+          </div>
+        </div>
+      </div>
+      </main>
+  </div>
+</div>

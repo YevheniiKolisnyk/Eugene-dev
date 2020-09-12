@@ -1,0 +1,61 @@
+<app-alert></app-alert>
+<nav class="navbar"
+     [ngStyle]="{
+       'justifyContent': auth.isAuthenticated() ? 'space-around' : 'center'}"
+       [ngStyle]="{'height': style.height, 'justifyContent': auth.isAuthenticated() ? 'space-around' : 'center'}">
+  <a [routerLink]="['/blog']" class="logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="6.36364" cy="6.36364" r="6.36364" fill="white"/>
+      <circle cx="21.6363" cy="6.36364" r="6.36364" fill="white"/>
+      <circle cx="21.6363" cy="21.6364" r="6.36364" fill="white"/>
+      <circle cx="6.36364" cy="21.6364" r="6.36364" fill="white"/>
+    </svg>
+    <p>Admin page</p>
+  </a>
+  <div class="hamburger-menu" *ngIf="auth.isAuthenticated()">
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" (click)="openMenu()">
+      <span></span>
+    </label>
+
+  <ul>
+    <li>
+      <button
+        class="control"
+        [routerLink]="['/blog/admin', 'dashboard']"
+        routerLinkActive="active">
+          Main page
+        </button>
+    </li>
+    <li>
+      <button
+        class="control"
+        [routerLink]="['/blog/admin', 'create']"
+        routerLinkActive="active">
+          Create
+        </button>
+    </li>
+    <li>
+      <button
+        class="logout"
+        href="#"
+        (click)="logout($event)">
+          Logout
+        </button>
+    </li>
+  </ul>
+
+
+  </div>
+</nav>
+
+
+
+
+  <main>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+  </main>
+

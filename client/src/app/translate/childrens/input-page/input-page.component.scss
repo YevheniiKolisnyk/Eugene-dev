@@ -1,0 +1,292 @@
+main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    position: absolute;
+    left: 50px;
+    top: 70px;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .bottomWave {
+    z-index: -1;
+    position: absolute;
+    margin-bottom: -10px;
+    width: 580px;
+    left: 0;
+    bottom: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .topWave {
+    z-index: -1;
+    position: absolute;
+    width: 406px;
+    top: 0;
+    right: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .adaptiveWave {
+    display: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .adaptiveWave {
+    display: none;
+
+    p {
+      display: none;
+    }
+  }
+
+  .goHome {
+    position: absolute;
+    top: 90px;
+    right: 80px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+    mat-icon {
+      font-size: 30px;
+      vertical-align: bottom;
+    }
+  }
+
+  form {
+    height: 200px;
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+
+    .forms {
+      display: flex;
+
+      div {
+        width: 45%;
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 87%;
+          background: transparent;
+          border: 0;
+          border-bottom: 1px solid #4D515C;
+          height: 55px;
+          font-size: 30px;
+          outline: none;
+          margin-left: 20px;
+          font-family: 'Montserrat', sans-serif;
+
+            &.ng-invalid.ng-touched::placeholder{
+              color: #FF0000;
+            }
+            &.ng-invalid.ng-touched{
+              border-bottom-color: #FF0000;
+            }
+        }
+
+
+      }
+
+      .word {
+        margin-right: 70px;
+      }
+    }
+
+    .add {
+      width: 180px;
+      height: 60px;
+      font-size: 25px;
+      border-radius: 70px;
+      border: 0;
+      background-color: #FEAE4B;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .add:hover {
+      background-color: rgba(254, 173, 75, 0.877);
+    }
+
+    .add.disabled {
+      background-color: rgba(254, 173, 75, 0.418);
+    }
+
+    .start {
+      position: absolute;
+      bottom: 80px;
+      right: 95px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 40px;
+      width: 230px;
+      height: 60px;
+      background: none;
+      border: 0;
+      color: #4D515C;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .start:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    p {
+      font-size: 35px;
+    }
+
+    .bottomWave {
+      width: 400px;
+
+    }
+
+    .topWave {
+      width: 320px;
+    }
+
+    .goHome {
+      top: 70px;
+      right: 60px;
+    }
+
+    form {
+      width: 70%;
+
+      .start {
+        bottom: 60px;
+        right: 70px;
+        font-size: 35px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    p {
+      font-size: 30px;
+    }
+
+    .bottomWave {
+      width: 300px;
+
+    }
+
+    .topWave {
+      width: 240px;
+    }
+
+    .goHome {
+      top: 40px;
+      right: 50px;
+    }
+
+    form {
+      width: 85%;
+
+      .start {
+        bottom: 40px;
+        right: 40px;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 550px) {
+  main {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .adaptiveWave {
+      z-index: -1;
+      display: initial;
+      width: 101%;
+      margin: -10px 0 -80px;
+    }
+
+    p {
+      display: none;
+    }
+
+    .topWave {
+      display: none;
+    }
+
+    .bottomWave {
+      display: none;
+    }
+
+
+    form {
+      width: 90%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      margin: 0;
+
+      .forms {
+        flex-direction: column;
+        align-self: center;
+
+        .word {
+          width: 100%;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+
+        .translate {
+          width: 100%;
+        }
+      }
+
+      .add {
+        align-self: flex-end;
+        margin: 10px 0;
+      }
+
+      .start {
+        align-self: center;
+        position: relative;
+        bottom: initial;
+        right: initial;
+      }
+    }
+  }
+}

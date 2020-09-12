@@ -1,0 +1,42 @@
+<main>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="code-block open">
+      <p class="code html-open">&#60;html&#62;</p>
+      <p class="code body-open">&#60;body&#62;</p>
+    </div>
+
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="code-block close">
+      <p class="code body-close">&#60;/body&#62;</p>
+      <p class="code html-close">&#60;/html&#62;</p>
+    </div>
+  </div>
+
+  <nav>
+    <a routerLink="/">
+      <span class="iconify" data-icon="ant-design:home-outlined" data-inline="false" style="color: #73EEFF;"></span>
+      <p class="link-hover">HOME</p>
+    </a>
+    <a routerLink="/about">
+      <span class="iconify" data-icon="clarity:user-line" data-inline="false" style="color: #73EEFF;"></span>
+      <p class="link-hover">ABOUT</p>
+    </a>
+    <a routerLink="/skills">
+      <span class="iconify" data-icon="codicon:settings-gear" data-inline="false" style="color: #73EEFF;"></span>
+      <p class="link-hover">SKILLS</p>
+    </a>
+    <a routerLink="/projects">
+      <span class="iconify" data-icon="bi:eye" data-inline="false" style="color: #73EEFF;"></span>
+      <p class="link-hover">PROJECTS</p>
+    </a>
+    <a routerLink="/contact">
+      <span class="iconify" data-icon="feather:mail" data-inline="false" style="color: #73EEFF;"></span>
+      <p class="link-hover">CONTACT</p>
+    </a>
+  </nav>
+
+</main>

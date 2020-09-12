@@ -1,0 +1,50 @@
+<main>
+  <div class="header">
+    <p>to-do list</p>
+    <a routerLink="/">home page</a>
+  </div>
+
+  <div class="nav">
+    <ul>
+      <li>
+        <button class="create" (click)="openDialog()">
+          <mat-icon class="createIcon">add</mat-icon>
+        </button>
+      </li>
+      <li>
+        <button class="delete" (click)="deleteTasks()">
+          <mat-icon class="deleteIcon">delete</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+    <div class="tasks">
+        <div class="todo">
+          <h1>To do:</h1>
+
+          <div class="card" *ngFor="let item of tasks">
+            <button (click)="complete(item._id)">
+              <mat-icon class="icon">done</mat-icon>
+            </button>
+            <p>{{ item.title }}</p>
+          </div>
+          <div class="emptyToDo" *ngIf="!tasks.length" >
+            <p>you don`t have any tasks, to add the task click “+”</p>
+          </div>
+        </div>
+
+        <div class="done">
+          <h1>Done tasks:</h1>
+
+          <div class="card" *ngFor="let item of doneTasks">
+            <p>{{item.title}}</p>
+          </div>
+          <div class="emptyDone" *ngIf="!doneTasks.length" >
+            <p>You have not finished any task</p>
+          </div>
+        </div>
+    </div>
+</main>
+
+

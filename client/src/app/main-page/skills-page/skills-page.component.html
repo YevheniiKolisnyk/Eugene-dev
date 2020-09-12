@@ -1,0 +1,44 @@
+<main>
+  <div class="left-block">
+    <div class="title-block">
+      <p class="title-tag open">&#60;h1&#62;</p>
+      <p class="title-text">Skills</p>
+      <p class="title-tag close">&#60;/h1&#62;</p>
+    </div>
+
+    <div class="paragraph-block">
+      <p class="paragraph-tag open">&#60;p&#62;</p>
+      <p class="paragraph-text">
+        First of all, it's amazing that you are here, Welcome! My name is Yevhenii Kolisnyk and I based in Lodz, Poland.
+        I
+      </p>
+      <p class="paragraph-tag close">&#60;/p&#62;</p>
+    </div>
+  </div>
+
+  <div class="right-block">
+    <div class="skills-container">
+
+
+      <div class="first block">
+        <div class="skill"  *ngFor="let skill of skills.slice(0, 5); index as idx">
+          <span [class]="skill.class" [attr.data-icon]="skill.dataIcon" [attr.data-inline]="skill.dataInline" [style]="skill.style"></span>
+          <p>{{skill.title}}</p>
+        </div>
+      </div>
+      <div class="second block">
+        <div class="skill"  *ngFor="let skill of skills.slice(5, 10); index as idx">
+          <span [class]="skill.class" [attr.data-icon]="skill.dataIcon" [attr.data-inline]="skill.dataInline" [style]="skill.style"></span>
+          <p>{{skill.title}}</p>
+        </div>
+      </div>
+      <div class="third block">
+        <div class="skill"  *ngFor="let skill of skills.slice(10); index as idx">
+          <span [class]="skill.class" [attr.data-icon]="skill.dataIcon" [attr.data-inline]="skill.dataInline" [style]="skill.style"></span>
+          <p>{{skill.title}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

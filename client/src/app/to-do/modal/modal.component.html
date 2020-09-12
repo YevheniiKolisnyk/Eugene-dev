@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label for="task">Your Task:</label>
+  <input formControlName="title" id="task" maxlength="20">
+  <div class="controls">
+    <button class="add" type="submit" [disabled]="form.invalid">
+      <mat-icon class="icon" >add</mat-icon>
+    </button>
+    <button class="close" (click)="onNoClick()">
+      <mat-icon class="icon">close</mat-icon>
+    </button>
+  </div>
+</form>
