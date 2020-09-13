@@ -1,17 +1,22 @@
 const {Router} = require('express')
 const router = Router()
-const nodemailer = require('nodemailer')
-const sendgrid = require('nodemailer-sendgrid-transport')
+const sgMail = require('@sendgrid/mail');
 const keys = require('../keys/keys')
-const contactMail = require('../emails/contactEmail')
-
-const transporter = nodemailer.createTransport(sendgrid({
-  auth: {api_key: keys.sendgridAPI_KEY},
-}))
 
 router.post('/',  async (req, res) => {
   try {
-    await transporter.sendMail(contactMail(req.body))
+    sgMail.setApiKey(keys.sendgridAPI_KEY);
+    const msg = {
+      to: 'yevhenii.kolisnyk@gmail.com',
+      from: 'kolesnikthebest@gmail.com',
+      subject: req.body.subject,
+      html: `
+              <h1>Message from ${req.body.name}: ${req.body.email}</h1>
+              <hr>    
+              <p>${req.body.message}</p>    
+              <hr>`
+    };
+    await sgMail.send(msg);
     res.json({success: true})
   } catch (e) {
     console.log(e)

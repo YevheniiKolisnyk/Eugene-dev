@@ -3,3 +3,4 @@ keys/keys.dev.js
 client/etc
 .idea
 .vscode
+sendgrid.env

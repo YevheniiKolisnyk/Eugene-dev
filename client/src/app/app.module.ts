@@ -45,7 +45,8 @@ import {AboutPageComponent} from './main-page/about-page/about-page.component'
 import {ContactPageComponent} from './main-page/contact-page/contact-page.component'
 import {ProjectsPageComponent} from './main-page/projects-page/projects-page.component'
 import {SkillsPageComponent} from './main-page/skills-page/skills-page.component'
-import {WelcomePageComponent} from './main-page/welcome-page/welcome-page.component'
+import {WelcomePageComponent} from './main-page/welcome-page/welcome-page.component';
+import { MainSnackbarComponent } from './main-page/main-snackbar/main-snackbar.component'
 
 
 const INTERSEPTOR_PROVIDER: Provider = {
@@ -78,7 +79,8 @@ const INTERSEPTOR_PROVIDER: Provider = {
     ContactPageComponent,
     ProjectsPageComponent,
     SkillsPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    MainSnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -112,6 +114,8 @@ const INTERSEPTOR_PROVIDER: Provider = {
   entryComponents: [
     ModalComponent,
     ModalWordsComponent,
+    CopySnackBarComponent,
+    MainSnackbarComponent
   ]
 })
 export class AppModule {
