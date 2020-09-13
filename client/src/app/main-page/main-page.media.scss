@@ -87,6 +87,10 @@
     flex-direction: column-reverse;
     align-items: flex-start;
 
+    #particles-js {
+      height: calc(100vh - 60px);
+    }
+
     .container {
       width: 90%;
       min-height: calc(100vh - 60px);
