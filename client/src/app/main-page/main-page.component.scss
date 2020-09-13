@@ -5,8 +5,9 @@
 }
 
 
-body {
-  overflow: hidden;
+:host {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 main {
