@@ -9,7 +9,6 @@ export class TodoService {
   constructor(private http: HttpClient) {}
 
   fetch():Observable<Task[]> {
-    console.log(213)
     return this.http.get<Task[]>('api/todo')
   }
 
