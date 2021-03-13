@@ -1,7 +1,5 @@
 <app-alert></app-alert>
 <nav class="navbar"
-     [ngStyle]="{
-       'justifyContent': auth.isAuthenticated() ? 'space-around' : 'center'}"
        [ngStyle]="{'height': style.height, 'justifyContent': auth.isAuthenticated() ? 'space-around' : 'center'}">
   <a [routerLink]="['/blog']" class="logo">
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,10 +47,6 @@
 
   </div>
 </nav>
-
-
-
-
   <main>
       <div class="container">
         <router-outlet></router-outlet>
